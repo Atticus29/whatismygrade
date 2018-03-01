@@ -28,7 +28,7 @@ export class SignInComponent implements OnInit {
 
   allValid(){
     let values = this.signInForm.value;
-    if(this.vs.validateEmail(values.userEmailBound) && this.vs.validatePassword(values.passwordBound)){
+    if(this.vs.validateEmail(values.emailBound) && this.vs.validatePassword(values.passwordBound)){
       return true;
     } else{
       return false;

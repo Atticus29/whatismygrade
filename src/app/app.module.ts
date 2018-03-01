@@ -13,6 +13,9 @@ const appRoutes: Routes = [
   { path: '',
   component: SignInComponent
   },
+  { path: 'students/:pw',
+  component: GradeDisplayComponent
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 
