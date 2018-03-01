@@ -18,6 +18,7 @@ export class SignInComponent implements OnInit {
     this.signInForm = this.fb.group({
       emailBound: ['', Validators.required],
       passwordBound: ['', Validators.required],
+      userNameBound: ['', Validators.required]
     });
   }
 
@@ -28,7 +29,7 @@ export class SignInComponent implements OnInit {
 
   allValid(){
     let values = this.signInForm.value;
-    if(this.vs.validateEmail(values.emailBound) && this.vs.validatePassword(values.passwordBound)){
+    if(this.vs.validateEmail(values.emailBound) && this.vs.validatePassword(values.passwordBound) && this.vs.validateUserName(values.userNameBound)){
       return true;
     } else{
       return false;

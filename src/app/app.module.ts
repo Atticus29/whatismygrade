@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   { path: '',
   component: SignInComponent
   },
-  { path: 'students/:pw',
+  { path: 'students/:user/:pw',
   component: GradeDisplayComponent
   },
   { path: '**', component: PageNotFoundComponent }

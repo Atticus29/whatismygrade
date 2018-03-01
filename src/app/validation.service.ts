@@ -13,4 +13,9 @@ export class ValidationService {
   validatePassword(password: string){
     return password.length > 6 && password;
   }
+
+  validateUserName(userName: string){
+    var re = new RegExp('^([a-zA-Z\-0-9]+)$');
+    return re.test(userName) && userName && userName.length > 6;
+  }
 }
