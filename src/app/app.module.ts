@@ -8,12 +8,13 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { GradeDisplayComponent } from './grade-display/grade-display.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { D3Service } from './d3.service';
 
 const appRoutes: Routes = [
   { path: '',
   component: SignInComponent
   },
-  { path: 'students/:user/:pw',
+  { path: 'test', //students/:user/:pw
   component: GradeDisplayComponent
   },
   { path: '**', component: PageNotFoundComponent }
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
     ),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
