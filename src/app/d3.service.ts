@@ -8,9 +8,9 @@ export class D3Service {
 
   loadTable() {
     console.log("got into loadTable");
-    d3.csv("https://github.com/umbrae/reddit-top-2.5-million/blob/master/data/cars.csv", function(data){
-      console.log(data[0]);
-    });
+    // d3.csv("http://127.0.0.1:8080/master_grades_lecture.csv", function(error, data){
+    //   console.log(data[0]);
+    // });
     // let svg, container, zoomed, zoom;
     //
     // svg = d3.select(svgElement);

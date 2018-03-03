@@ -9,6 +9,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { GradeDisplayComponent } from './grade-display/grade-display.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { D3Service } from './d3.service';
+import { HttptestComponent } from './httptest/httptest.component';
 
 const appRoutes: Routes = [
   { path: '',
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     SignInComponent,
     GradeDisplayComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HttptestComponent
   ],
   imports: [
     BrowserModule,
