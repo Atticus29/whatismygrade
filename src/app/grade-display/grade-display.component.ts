@@ -17,9 +17,9 @@ export class GradeDisplayComponent implements OnInit {
     .append("h1")
     .text('Hello World!');
 
-    // d3.csv("../assets/master_grades_lecture.csv", function(error, data){
-    //   console.log(data[0]);
-    // });
+    d3.csv("http://localhost:4200/assets/master_grades_lecture.csv", function(error, data){
+      console.log(data[0]);
+    });
   }
 
 }
