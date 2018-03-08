@@ -13,13 +13,6 @@ export class GradeDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.d3Service.loadTable();
-    d3.select("body")
-    .append("h1")
-    .text('Hello World!');
-
-    d3.csv("http://localhost:4200/assets/master_grades_lecture.csv", function(error, data){
-      console.log(data[0]);
-    });
   }
 
 }

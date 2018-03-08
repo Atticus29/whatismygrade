@@ -3,26 +3,41 @@ import * as d3 from 'd3';
 
 @Injectable()
 export class D3Service {
+  private tableData = [];
 
   constructor() { }
 
   loadTable() {
     console.log("got into loadTable");
-    // d3.csv("http://127.0.0.1:8080/master_grades_lecture.csv", function(error, data){
-    //   console.log(data[0]);
-    // });
-    // let svg, container, zoomed, zoom;
-    //
-    // svg = d3.select(svgElement);
-    // container = d3.select(containerElement);
-    //
-    // zoomed = () => {
-    //   const transform = d3.event.transform;
-    //   container.attr('transform', 'translate(' + transform.x + ',' + transform.y + ') scale(' + transform.k + ')');
-    // }
-    //
-    // zoom = d3.zoom().on('zoom', zoomed);
-    // svg.call(zoom);
+    var data = [];
+    var table = d3.select('#hi')
+      .append('table')
+      .classed('table', true);
+
+    var thead = table.append('thead').append('tr');
+
+    var tbody = table.append('tbody');
+
+    var reload = function(){
+      d3.csv("http://localhost:4200/assets/master_grades_lecture.csv", function(error, rows){
+        data = rows;
+        console.log(data);
+        redraw(data);
+      });
+    }
+
+    var redraw = function(data){
+      var keys = d3.map(data[0]).keys()
+      thead.selectAll("th")
+        .data(keys)
+        .enter()
+        .append('th')
+        .text(function(d) {return d;});
+      console.log("redraw called");
+    }
+
+    reload();
+
   }
 
 }
