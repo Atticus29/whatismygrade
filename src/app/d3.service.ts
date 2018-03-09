@@ -37,7 +37,7 @@ export class D3Service {
       rows.enter().append('tr');
       rows.exit().remove();
       var cells = rows.selectAll('td')
-        .data(function(data) {return d3.map(data).values();});
+        .data(function(row, i) {return d3.map(data).values();});
       cells.enter().append('td');
       cells.text(function(d){return d;});
     }

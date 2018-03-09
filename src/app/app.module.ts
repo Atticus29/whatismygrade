@@ -11,6 +11,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { D3Service } from './d3.service';
 import { HttptestComponent } from './httptest/httptest.component';
 
+import { CovalentLayoutModule } from '@covalent/core/layout';
+import { CovalentStepsModule  } from '@covalent/core/steps';
+
 const appRoutes: Routes = [
   { path: '',
   component: SignInComponent
