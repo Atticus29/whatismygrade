@@ -9,7 +9,7 @@ export class D3Service {
 
   loadTable() {
     console.log("got into loadTable");
-    var data = [];
+    // var data = [];
     var table = d3.select('#hi')
       .append('table')
       .classed('table', true);
@@ -20,9 +20,9 @@ export class D3Service {
 
     var reload = function(){
       d3.csv("http://localhost:4200/assets/master_grades_lecture.csv", function(error, rows){
-        data = rows;
-        console.log(data);
-        redraw(data);
+        // data = rows;
+        console.log(rows);
+        redraw(rows);
       });
     }
 
