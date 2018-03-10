@@ -9,18 +9,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { GradeDisplayComponent } from './grade-display/grade-display.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { D3Service } from './d3.service';
+import { PasswordService } from './password.service';
 import { HttptestComponent } from './httptest/httptest.component';
-
-const appRoutes: Routes = [
-  { path: '',
-  component: SignInComponent
-  },
-  { path: 'test', //students/:user/:pw
-  component: GradeDisplayComponent
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
-
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -32,12 +23,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes
-    ),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    routing
   ],
-  providers: [D3Service],
+  providers: [D3Service, PasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

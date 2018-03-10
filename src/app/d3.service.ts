@@ -15,10 +15,11 @@ export class D3Service {
     var tbody = table.append('tbody');
 
     var reload = function(){
-      d3.csv("http://localhost:4200/assets/master_grades_lecture.csv", function(error, entries){
-        data = entries;
-        redraw(data);
-      });
+      //TODO fix this
+      // d3.csv("http://localhost:4200/assets/master_grades_lecture.csv", function(error, entries){
+        // data = entries;
+        // redraw(data);
+      // });
     }
 
     var redraw = function(data){

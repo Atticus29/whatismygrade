@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormArray, Validators} from '@angular/forms';
 import { ValidationService } from '../validation.service';
+import { PasswordService } from '../password.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { ValidationService } from '../validation.service';
 export class SignInComponent implements OnInit {
   signInForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private vs: ValidationService) { }
+  constructor(private fb: FormBuilder, private vs: ValidationService, private ps: PasswordService, private router: Router) { }
 
   ngOnInit() {
     this.signInForm = this.fb.group({
@@ -36,8 +38,14 @@ export class SignInComponent implements OnInit {
     }
   }
 
-  processForm(){
+  processFormInputs(){
     console.log("processForm entered");
+    let values = this.signInForm.value;
+    if(this.ps.storeInfo(values.emailBound, values.userNameBound, values.passwordBound)){
+      console.log("got true");
+      this.router.navigate(['test']);
+    }
+
   }
 
 }
