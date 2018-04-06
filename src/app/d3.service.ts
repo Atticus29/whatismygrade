@@ -6,20 +6,22 @@ export class D3Service {
   constructor() { }
 
   loadTable() {
+    var table = d3.select('body').append('table')
+    var thead = table.append('thead')
+    var	tbody = table.append('tbody');
     var reload = function(){
     d3.csv("http://localhost:4200/assets/master_grades_lecture.csv", function(entries){
+      var table = d3.select('body').append('table')
+      var thead = table.append('thead')
+      var	tbody = table.append('tbody');
       function tabulate(data, columns) {
-        var table = d3.select('body').append('table')
-        var thead = table.append('thead')
-        var	tbody = table.append('tbody');
-
         // append the header row
         thead.append('tr')
         .selectAll('th')
         .data(columns).enter()
         .append('th')
         .text(function (column) { return column; });
-        
+
         // create a row for each object in the data
         var rows = tbody.selectAll('tr')
         .data(data)
