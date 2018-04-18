@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { GradeDisplayComponent } from './grade-display/grade-display.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { D3Service } from './d3.service';
 import { PasswordService } from './password.service';
 import { HttptestComponent } from './httptest/httptest.component';
 import { routing } from './app.routing';
@@ -26,7 +25,7 @@ import { routing } from './app.routing';
     ReactiveFormsModule,
     routing
   ],
-  providers: [D3Service, PasswordService],
+  providers: [PasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
