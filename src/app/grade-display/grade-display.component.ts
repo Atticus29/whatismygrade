@@ -21,11 +21,12 @@ export class GradeDisplayComponent implements OnInit {
     let d3ParentElement: Selection<any, any, any, any>;
     if(this.parentNativeElement !== null){
       d3ParentElement = d3.select(this.parentNativeElement);
-      
+      console.log(d3ParentElement);
+
     }
-    this.ps.getEmail().subscribe(result =>{
-      console.log(result);
-    });
+    // this.ps.getEmail().subscribe(result =>{
+    //   console.log(result);
+    // });
 
   }
 
